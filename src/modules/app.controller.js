@@ -1,5 +1,5 @@
 exports.get = function (req, res, next) {
-    res.render('index', { title: 'Multiplayer Quiz Application' });
+    res.render('index', { title: 'Function As A Service' });
 }
 
 const user = require("../modules/user/user.handler")

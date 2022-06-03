@@ -1,6 +1,6 @@
 module.exports = {
     service: {
-        name: 'Multiplayer_game'
+        name: 'FAAS'
     },
     server: {
         url: 'http://0.0.0.0:8000',
