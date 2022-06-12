@@ -9,7 +9,7 @@ async function register(req) {
         if (!_b.password) {
             throw new Error("Password cannot be null");
         } else if (!_b.email) {
-            throw new Error("email cannot be null");
+            throw new Error("Email cannot be null");
         } else {
             let u = await User.findOne({
                 where: {
@@ -66,7 +66,7 @@ async function login(req) {
         } else {
             const user = await User.findOne({ where: { email: _b.email } });
             if (!user) {
-                throw new Error('data not found');
+                throw new Error('No user found');
             } else if (!bcrypt.compareSync(_b.password, user.password)) {
                 throw new Error('Wrong Password');
             } else {
@@ -83,7 +83,7 @@ async function login(req) {
         console.log(err)
         return {
             code: 400,
-            data: { status: true, message: err.message }
+            data: { status: false, message: err.message }
         }
     }
 };
